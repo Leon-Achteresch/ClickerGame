@@ -1,0 +1,153 @@
+inherited ClickerForm_XLgXhdpiTb: TClickerForm_XLgXhdpiTb
+  ClientHeight = 1255
+  ClientWidth = 800
+  DesignerMasterStyle = 0
+  inherited TabControl1: TTabControl
+    Size.Width = 800.000000000000000000
+    Size.Height = 1193.000000000000000000
+    Sizes = (
+      800s
+      1193s
+      800s
+      1193s
+      800s
+      1193s)
+    inherited Clicker: TTabItem
+      ExplicitSize.cx = 56.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited Layout1: TLayout
+        Size.Width = 800.000000000000000000
+        inherited Layout3: TLayout
+          Size.Width = 800.000000000000000000
+          inherited CornerButton5: TCornerButton
+            Position.X = 627.000000000000000000
+          end
+          inherited CornerButton8: TCornerButton
+            Position.X = 707.000000000000000000
+          end
+        end
+        inherited CornerButton2: TCornerButton
+          Size.Width = 800.000000000000000000
+        end
+      end
+      inherited Layout2: TLayout
+        Size.Width = 800.000000000000000000
+        Size.Height = 921.000000000000000000
+        inherited Rectangle3: TRectangle
+          Size.Width = 760.000000000000000000
+          Size.Height = 881.000000000000000000
+          inherited CpS: TText
+            Size.Width = 740.000000000000000000
+          end
+          inherited Layout5: TLayout
+            Size.Width = 760.000000000000000000
+            Size.Height = 831.000000000000000000
+            inherited Text1: TText
+              Size.Width = 760.000000000000000000
+              TextSettings.Font.StyleExt = {00060000000000000004000000}
+              inherited Rectangle4: TRectangle
+                Position.X = 702.000000000000000000
+              end
+            end
+          end
+        end
+      end
+    end
+    inherited Profil: TTabItem
+      ExplicitSize.cx = 48.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inherited Rectangle6: TRectangle
+        Size.Width = 780.000000000000000000
+        inherited Layout10: TLayout
+          Position.X = 651.000000000000000000
+          inherited Image1: TImage
+            MultiResBitmap.Height = 1536
+            MultiResBitmap.Width = 1536
+          end
+        end
+        inherited Layout11: TLayout
+          Size.Width = 651.000000000000000000
+          inherited Text7: TText
+            Size.Width = 641.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited Layout8: TLayout
+            Size.Width = 651.000000000000000000
+          end
+          inherited Text6: TText
+            Size.Width = 641.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+      inherited Rectangle7: TRectangle
+        Size.Width = 780.000000000000000000
+        inherited Text8: TText
+          Size.Width = 770.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inherited Shop: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited VertScrollBox1: TVertScrollBox
+        Size.Width = 800.000000000000000000
+        Size.Height = 1143.000000000000000000
+        Viewport.Width = 800.000000000000000000
+        Viewport.Height = 1143.000000000000000000
+        inherited UpgradeLayout2: TLayout
+          Size.Width = 780.000000000000000000
+          inherited Rectangle5: TRectangle
+            Size.Width = 780.000000000000000000
+            inherited Upgrade1Btn: TCornerButton
+              Position.X = 700.000000000000000000
+            end
+            inherited Layout7: TLayout
+              Size.Width = 700.000000000000000000
+              inherited UpgradeText2: TText
+                Size.Width = 700.000000000000000000
+              end
+              inherited UpgradeValue2: TText
+                Size.Width = 690.000000000000000000
+                inherited Upgrade1Preis: TText
+                  Position.X = 539.000000000000000000
+                end
+              end
+            end
+          end
+        end
+        inherited UpgradeLayout1: TLayout
+          Size.Width = 780.000000000000000000
+          inherited Rectangle10: TRectangle
+            Size.Width = 780.000000000000000000
+            inherited CornerButton3: TCornerButton
+              Position.X = 700.000000000000000000
+            end
+            inherited Layout15: TLayout
+              Size.Width = 700.000000000000000000
+              inherited UpgradeText1: TText
+                Size.Width = 700.000000000000000000
+              end
+              inherited UpgradeValue1: TText
+                Size.Width = 690.000000000000000000
+                inherited Text11: TText
+                  Position.X = 539.000000000000000000
+                end
+              end
+            end
+          end
+        end
+      end
+      inherited Layout16: TLayout
+        Size.Width = 800.000000000000000000
+      end
+    end
+  end
+  inherited Oben: TPanel
+    Size.Width = 800.000000000000000000
+    inherited Rectangle2: TRectangle
+      Position.X = 734.000000000000000000
+    end
+  end
+end
