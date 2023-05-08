@@ -88,6 +88,7 @@ type
 
     aClickValue  : Double;
     UpgradeList: TList<TUpgrade>;
+    Liste : TList<TRectangle>;
 
     Connection : Boolean;
 
@@ -97,6 +98,7 @@ type
     function SetValue(): Integer;
     function CreateMyRectangle(AOwner: TComponent; AParent: TVertScrollBox; AName: string; i: Integer): TRectangle;
     function ExtractNumberFromButtonName(const AName: string): Integer;
+
     const FileName: String = 'content.json';
   public
     aCoins       : Double;
@@ -128,6 +130,7 @@ begin
  TabControl1.ActiveTab:= Clicker;
  CPS.Text:= CPS.Text + aClickValue.ToString;
  UpgradeList := TList<TUpgrade>.Create;
+ Liste := TList<TRectangle>.Create;
  ////
  Connection:=False;
  ////
@@ -287,92 +290,100 @@ var
   MyLayout: TLayout;
   Text1, Text2, Text3: TText;
   MyButton: TCornerButton;
+
 begin
   ClearMyRectangles(AParent);
 
-  Result := TRectangle.Create(AOwner);
-  Result.Parent := AParent;
-  Result.Name := AName;
-  Result.Align := TAlignLayout.Top;
-  Result.Margins.Left := 10;
-  Result.Margins.Top := 10;
-  Result.Margins.Right := 10;
-  Result.Position.X := 10;
-  Result.Position.Y := 10;
-  Result.Size.Width := 353;
-  Result.Size.Height := 86;
-  Result.Size.PlatformDefault := False;
-  Result.Stroke.Thickness := 0.3;
-  Result.XRadius := 10;
-  Result.YRadius := 10;
+  if Assigned(Liste) then begin
 
-  MyLayout := TLayout.Create(Result);
-  MyLayout.Parent := Result;
-  MyLayout.Align := TAlignLayout.Client;
-  MyLayout.Margins.Left := 10;
-  MyLayout.Size.Width := 214;
-  MyLayout.Size.Height := 86;
-  MyLayout.Size.PlatformDefault := False;
-  MyLayout.TabOrder := 1;
 
-  Text1 := TText.Create(MyLayout);
-  Text1.Parent := MyLayout;
-  Text1.Align := TAlignLayout.Top;
-  Text1.Size.Width := 214;
-  Text1.Size.Height := 33;
-  Text1.Size.PlatformDefault := False;
-  Text1.Text := UpgradeList[i].Name;
-  Text1.TextSettings.Font.Size := 14;
-  //Text1.TextSettings.Font.StyleExt := [TFontStyle.fsBold];
-  Text1.TextSettings.HorzAlign := TTextAlign.Leading;
+    Result := TRectangle.Create(AOwner);
+    Result.Parent := AParent;
+    Result.Name := AName;
+    Result.Align := TAlignLayout.Top;
+    Result.Margins.Left := 10;
+    Result.Margins.Top := 10;
+    Result.Margins.Right := 10;
+    Result.Position.X := 10;
+    Result.Position.Y := 10;
+    Result.Size.Width := 353;
+    Result.Size.Height := 86;
+    Result.Size.PlatformDefault := False;
+    Result.Stroke.Thickness := 0.3;
+    Result.XRadius := 10;
+    Result.YRadius := 10;
 
-  Text2 := TText.Create(MyLayout);
-  Text2.Parent := MyLayout;
-  Text2.Align := TAlignLayout.Client;
-  Text2.Size.Width := 214;
-  Text2.Size.Height := 28;
-  Text2.Size.PlatformDefault := False;
-  Text2.Text := 'x'+ UpgradeList[i].Value.ToString +'Multiplier';
-  //Text2.TextSettings.Font.StyleExt := [];
-  Text2.TextSettings.HorzAlign := TTextAlign.Leading;
 
-  Text3 := TText.Create(MyLayout);
-  Text3.Parent := MyLayout;
-  Text3.Align := TAlignLayout.Bottom;
-  Text3.Position.Y := 61;
-  Text3.Size.Width := 214;
-  Text3.Size.Height := 25;
-  Text3.Size.PlatformDefault := False;
-  Text3.Text := 'Level:'+ UpgradeList[i].Level.ToString +'|'+ 'Kosten:'+ UpgradeList[i].Price.ToString;
-  Text3.TextSettings.HorzAlign := TTextAlign.Leading;
+    MyLayout := TLayout.Create(Result);
+    MyLayout.Parent := Result;
+    MyLayout.Align := TAlignLayout.Client;
+    MyLayout.Margins.Left := 10;
+    MyLayout.Size.Width := 214;
+    MyLayout.Size.Height := 86;
+    MyLayout.Size.PlatformDefault := False;
+    MyLayout.TabOrder := 1;
 
-  MyButton := TCornerButton.Create(Result);
-  MyButton.Parent := Result;
-  MyButton.Name := 'UpgradeButton' + i.ToString;
-  MyButton.Text := '';
-  MyButton.Align := TAlignLayout.Right;
-  MyButton.Images := ImageList1;
-  MyButton.ImageIndex := 2;
-  MyButton.Position.X := 297;
-  MyButton.Sides := [TSide.Top, TSide.Left, TSide.Bottom, TSide.Right];
-  MyButton.Size.Width := 56;
-  MyButton.Size.Height := 86;
-  MyButton.Size.PlatformDefault := False;
-  MyButton.StyleLookup := 'CornerButtonstyle';
-  MyButton.TabOrder := 0;
-  MyButton.XRadius := 3;
-  MyButton.YRadius := 3;
+    Text1 := TText.Create(MyLayout);
+    Text1.Parent := MyLayout;
+    Text1.Align := TAlignLayout.Top;
+    Text1.Size.Width := 214;
+    Text1.Size.Height := 33;
+    Text1.Size.PlatformDefault := False;
+    Text1.Text := UpgradeList[i].Name;
+    Text1.TextSettings.Font.Size := 14;
+    //Text1.TextSettings.Font.StyleExt := [TFontStyle.fsBold];
+    Text1.TextSettings.HorzAlign := TTextAlign.Leading;
 
-  MyButton.OnClick := UpgradeBtnClick;
+    Text2 := TText.Create(MyLayout);
+    Text2.Parent := MyLayout;
+    Text2.Align := TAlignLayout.Client;
+    Text2.Size.Width := 214;
+    Text2.Size.Height := 28;
+    Text2.Size.PlatformDefault := False;
+    Text2.Text := 'x'+ UpgradeList[i].Value.ToString +'Multiplier';
+    //Text2.TextSettings.Font.StyleExt := [];
+    Text2.TextSettings.HorzAlign := TTextAlign.Leading;
 
-  with TRectangle.Create(Result) do begin
-      Parent := Result;
-      Align := TAlignLayout.Left;
-      //Fill.Color := claAqua;
-      Size.Width := 73;
-      Size.Height := 86;
-      Size.PlatformDefault := False;
-      Stroke.Thickness := 0;
+    Text3 := TText.Create(MyLayout);
+    Text3.Parent := MyLayout;
+    Text3.Align := TAlignLayout.Bottom;
+    Text3.Position.Y := 61;
+    Text3.Size.Width := 214;
+    Text3.Size.Height := 25;
+    Text3.Size.PlatformDefault := False;
+    Text3.Text := 'Level:'+ UpgradeList[i].Level.ToString +'|'+ 'Kosten:'+ UpgradeList[i].Price.ToString;
+    Text3.TextSettings.HorzAlign := TTextAlign.Leading;
+
+    MyButton := TCornerButton.Create(Result);
+    MyButton.Parent := Result;
+    MyButton.Name := 'UpgradeButton' + i.ToString;
+    MyButton.Text := '';
+    MyButton.Align := TAlignLayout.Right;
+    MyButton.Images := ImageList1;
+    MyButton.ImageIndex := 2;
+    MyButton.Position.X := 297;
+    MyButton.Sides := [TSide.Top, TSide.Left, TSide.Bottom, TSide.Right];
+    MyButton.Size.Width := 56;
+    MyButton.Size.Height := 86;
+    MyButton.Size.PlatformDefault := False;
+    MyButton.StyleLookup := 'CornerButtonstyle';
+    MyButton.TabOrder := 0;
+    MyButton.XRadius := 3;
+    MyButton.YRadius := 3;
+
+    MyButton.OnClick := UpgradeBtnClick;
+
+    with TRectangle.Create(Result) do begin
+        Parent := Result;
+        Align := TAlignLayout.Left;
+        //Fill.Color := claAqua;
+        Size.Width := 73;
+        Size.Height := 86;
+        Size.PlatformDefault := False;
+        Stroke.Thickness := 0;
+    end;
+
+    Liste.Add(result);
   end;
 end;
 
@@ -493,8 +504,11 @@ var
 begin
  TabControl1.SetActiveTabWithTransition(Shop, TTabTransition.Slide);
  i := UpgradeList.Count-1;
+
+ Liste := TList<TRectangle>.Create;
+
  while i>=0 do begin
-  MyRectangle := CreateMyRectangle(Self, VertScrollBox1, 'MyRectangle' + IntToStr(i), i);
+  MyRectangle := CreateMyRectangle(Self, VertScrollBox1, 'Rects' + IntToStr(i), i);
 
   i:=i-1;
  end;
