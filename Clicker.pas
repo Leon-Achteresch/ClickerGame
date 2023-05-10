@@ -252,7 +252,6 @@ begin
  end;
  CoinsText.Text:= aCoins.ToString;
 
-
 end;
 
 procedure TClickerForm.FormDestroy(Sender: TObject);
@@ -276,11 +275,14 @@ var
   Multiplier : Double;
 begin
   for i := 0 to UpgradeList.Count-1 do begin
+
     Level := UpgradeList[i].Level;
+
     if Level>0 then begin           // das Level entspricht der Anzahl an Upgrades
-    Multiplier := ((Level) * 0.1);  // Berechnung des Multipliers
-    aClickValue := aClickValue + UpgradeList[i].Value * Multiplier;
+      Multiplier := ((Level) * 0.1);  // Berechnung des Multipliers
+      aClickValue := aClickValue + UpgradeList[i].Value * Multiplier;
     end else Continue;
+
   end;
   CPS.Text:= 'Click Mulitplier: '+ aClickValue.ToString;
 end;
@@ -295,7 +297,6 @@ begin
   ClearMyRectangles(AParent);
 
   if Assigned(Liste) then begin
-
 
     Result := TRectangle.Create(AOwner);
     Result.Parent := AParent;
@@ -476,12 +477,14 @@ begin
     end else ShowMessage('Nicht genügend Coins');
 
   end else if Sender = MyButton then begin
+
     BtnName := TCornerButton(Sender).Name;
     UpgradeIndex := ExtractNumberFromButtonName(BtnName);
+
     if UpgradeIndex >= 0 then begin
 
       if aCoins>=UpgradeList[UpgradeIndex].Price then begin;
-        Upgrade(aClickValue, UpgradeList[UpgradeIndex].Value + ((UpgradeList[UpgradeIndex].Level - 1) * 0.1), UpgradeList[UpgradeIndex].Price);
+        Upgrade(aClickValue, UpgradeList[UpgradeIndex].Value + aClickValue + ((UpgradeList[UpgradeIndex].Level) * 0.1), UpgradeList[UpgradeIndex].Price);
 
         UpgradeObject := UpgradeList[UpgradeIndex];
         UpgradeObject.Level := UpgradeObject.Level + 1;
@@ -504,9 +507,14 @@ var
 begin
  TabControl1.SetActiveTabWithTransition(Shop, TTabTransition.Slide);
  i := UpgradeList.Count-1;
+  for i := 0 to Liste.Count - 1 do
+  begin
+    Liste[i].Parent := nil; // Elternobjekt entfernen
+    Liste[i].DisposeOf; // Objekt freigeben
+  end;
+  Liste.Clear; // Liste leeren
 
- Liste := TList<TRectangle>.Create;
-
+ i := UpgradeList.Count-1;
  while i>=0 do begin
   MyRectangle := CreateMyRectangle(Self, VertScrollBox1, 'Rects' + IntToStr(i), i);
 

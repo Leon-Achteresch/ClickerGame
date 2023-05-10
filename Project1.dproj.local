@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.533,D:\Projekte\APPSTORE\#1_APP\Unit2.fmx=D:\Projekte\APPSTORE\#1_APP\Login.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.511,D:\Projekte\APPSTORE\#1_APP\Games.pas=D:\Projekte\APPSTORE\#1_APP\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.116,D:\Projekte\APPSTORE\#1_APP\Project1.dproj=C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Project1.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.511,D:\Projekte\APPSTORE\#1_APP\Games.fmx=D:\Projekte\APPSTORE\#1_APP\Unit1.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.616,=C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.849,=C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.616,=C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,D:\Projekte\APPSTORE\#1_APP\Login.fmx=D:\Projekte\APPSTORE\#1_APP\Unit2.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.533,D:\Projekte\APPSTORE\#1_APP\Login.pas=D:\Projekte\APPSTORE\#1_APP\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.116,C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Project1.dproj=D:\Projekte\APPSTORE\#1_APP\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.263,C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.pas=D:\Projekte\APPSTORE\#1_APP\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.134,=D:\Projekte\APPSTORE\#1_APP\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.862,D:\Projekte\APPSTORE\#1_APP\Clicker.fmx=D:\Projekte\APPSTORE\#1_APP\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.862,D:\Projekte\APPSTORE\#1_APP\Unit1.pas=D:\Projekte\APPSTORE\#1_APP\Clicker.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.116,=D:\Projekte\APPSTORE\#1_APP\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.263,D:\Projekte\APPSTORE\#1_APP\Unit1.pas=C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.533,D:\Projekte\APPSTORE\#1_APP\Unit2.pas=D:\Projekte\APPSTORE\#1_APP\Login.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.263,D:\Projekte\APPSTORE\#1_APP\Unit1.fmx=C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.862,D:\Projekte\APPSTORE\#1_APP\Clicker.pas=D:\Projekte\APPSTORE\#1_APP\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.511,D:\Projekte\APPSTORE\#1_APP\Unit1.pas=D:\Projekte\APPSTORE\#1_APP\Games.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.263,C:\Users\kaste\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.fmx=D:\Projekte\APPSTORE\#1_APP\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.862,D:\Projekte\APPSTORE\#1_APP\Unit1.fmx=D:\Projekte\APPSTORE\#1_APP\Clicker.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.511,D:\Projekte\APPSTORE\#1_APP\Unit1.fmx=D:\Projekte\APPSTORE\#1_APP\Games.fmx</Transaction>
   </Transactions>
 </BorlandProject>
